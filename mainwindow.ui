@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>931</width>
+    <height>510</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Editeur de présentations vidéo</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0" rowspan="2">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1672215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Points de contrôle</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0" colspan="3">
+        <widget class="QTableWidget" name="tableWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>395</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>130</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Temps début</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Temps fin/reprise</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Type</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="btn_AddKeyFrame">
+         <property name="text">
+          <string>Ajouter</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="btn_RemoveKeyFrame">
+         <property name="text">
+          <string>Supprimer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="btn_SetTimeIn">
+         <property name="text">
+          <string>Cue in</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btn_SetTimeOut">
+         <property name="text">
+          <string>Cue out</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="btn_Goto">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Aller à</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="btn_ChangeType">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Changer type</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Vidéo</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="Phonon::VideoPlayer" name="video_Preview"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbl_TimeShow">
+         <property name="font">
+          <font>
+           <pointsize>24</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Contrôles</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0" colspan="5">
+        <widget class="QLabel" name="lbl_TimePosition">
+         <property name="text">
+          <string>Chargez une vidéo !</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="Phonon::SeekSlider" name="seek_Preview">
+         <property name="iconVisible">
+          <bool>false</bool>
+         </property>
+         <property name="tracking">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="btn_PlayPause">
+         <property name="text">
+          <string>Play</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QPushButton" name="btn_StepRight">
+         <property name="text">
+          <string>Step &gt;&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="btn_StepLeft">
+         <property name="text">
+          <string>&lt;&lt; Step</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>931</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionNouvelle_pr_sentation"/>
+    <addaction name="actionOuvrir_une_pr_sentation"/>
+    <addaction name="separator"/>
+    <addaction name="actionEnregistrer_la_pr_sentation"/>
+    <addaction name="actionEnregistrer_la_pr_sentation_sous"/>
+   </widget>
+   <widget class="QMenu" name="menuVid_o">
+    <property name="title">
+     <string>Vidéo</string>
+    </property>
+    <addaction name="actionOuvrir_un_clip"/>
+   </widget>
+   <widget class="QMenu" name="menuPr_sentation">
+    <property name="title">
+     <string>Présentation</string>
+    </property>
+    <widget class="QMenu" name="menuLancer">
+     <property name="title">
+      <string>Lancer</string>
+     </property>
+     <addaction name="actionSur_ce_moniteur"/>
+     <addaction name="actionSur_le_second_moniteur"/>
+    </widget>
+    <addaction name="menuLancer"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuVid_o"/>
+   <addaction name="menuPr_sentation"/>
+  </widget>
+  <action name="actionNouvelle_pr_sentation">
+   <property name="text">
+    <string>Nouvelle présentation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOuvrir_une_pr_sentation">
+   <property name="text">
+    <string>Ouvrir une présentation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionEnregistrer_la_pr_sentation">
+   <property name="text">
+    <string>Enregistrer la présentation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionEnregistrer_la_pr_sentation_sous">
+   <property name="text">
+    <string>Enregistrer la présentation sous...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionOuvrir_un_clip">
+   <property name="text">
+    <string>Ouvrir un clip</string>
+   </property>
+  </action>
+  <action name="actionSur_ce_moniteur">
+   <property name="text">
+    <string>Sur ce moniteur</string>
+   </property>
+  </action>
+  <action name="actionSur_le_second_moniteur">
+   <property name="text">
+    <string>Sur le second moniteur</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Phonon::VideoPlayer</class>
+   <extends>QWidget</extends>
+   <header location="global">phonon/videoplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Phonon::SeekSlider</class>
+   <extends>QWidget</extends>
+   <header location="global">phonon/seekslider.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
